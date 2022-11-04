@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="index.css" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <!-- jQuery library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body class="text-center">
+
+
+    <style>
+        body {
+            background-image: linear-gradient(90deg, #79F1A4 10%, #0E5CAD 100%);
+        }
+    </style>
+
+    <h1 style="margin-top: 20px;">Coeficiente de correlación</h1>
+
+    <div class="container">
+        <div class="card text-white bg-info mb-3" style="margin-top: 30px;">
+            <div class="card-body">
+                <h5 class="card-title">Instrucciones</h5>
+                <p class="card-text">Selecciona el nivel del juego y pregunta de la encuesta que deseas relacionar, luego da click en relacionar</p>
+            </div>
+
+            <div class="row" style="margin-top:30px;">
+                <div class="col">
+                    <h4>Niveles</h4>
+                    <form name=parteUno>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="p1" type="checkbox" id="n-1" value=1
+                                onclick="deshabilitar(1)">
+                            <label class="form-check-label" for="n-0" style="font-size: 17px;">Nivel 1</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="p1" type="checkbox" id="n-2" value=2
+                                onclick="deshabilitar(2)">
+                            <label class="form-check-label" for="n-2" style="font-size: 17px;">Nivel 2</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="p1" type="checkbox" id="n-3" value=3
+                                onclick="deshabilitar(3)">
+                            <label class="form-check-label" for="n-3" style="font-size: 17px;">Nivel 3</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="p1" type="checkbox" id="n-4" value=4
+                                onclick="deshabilitar(4)">
+                            <label class="form-check-label" for="n-4" style="font-size: 17px;">Nivel 4</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="p1" type="checkbox" id="n-5" value=5
+                                onclick="deshabilitar(5)">
+                            <label class="form-check-label" for="n-5" style="font-size: 17px;">Nivel 5</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="col">
+                    <h4>Preguntas</h4>
+                    <form name=parteDos>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="p2" type="checkbox" id="pre1" value=1
+                                onclick="deshabilitar2(1)">
+                            <label class="form-check-label" for="pre1" style="font-size: 17px;">Pregunta 1</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="p2" type="checkbox" id="pre2" value=2
+                                onclick="deshabilitar2(2)">
+                            <label class="form-check-label" for="pre2" style="font-size: 17px;">Pregunta 2</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="p2" type="checkbox" id="pre3" value=3
+                                onclick="deshabilitar2(3)">
+                            <label class="form-check-label" for="pre3" style="font-size: 17px;">Pregunta 3</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <br>
+        </div>
+        <button class="btn btn-primary" style="width: 250;" onclick="sacarCoeficiente()">Relacionar</button>
+
+        <h2 id="h" style="margin-top: 20px;"></h2>
+        <h5 id="h" style="margin-top: 30px;">Aquí puedes encontrar la relación lineal de acuerdo al coeficiente obtenido</h5>
+        <table class="table" style="margin-top: 15px;">
+            <thead>
+              <tr>
+                <th scope="col">Rango</th>
+                <th scope="col">Relación lineal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">±0,96 - ±1,0</th>
+                <td>Perfecta</td>
+              </tr>
+              <tr>
+                <th scope="row">±0,85 - ±0,95</th>
+                <td>Fuerte</td>
+              </tr>
+              <tr>
+                <th scope="row">±0,70 - ±0,84</th>
+                <td>Significativa</td>
+              </tr>
+              <tr>
+                <th scope="row">±0,50 - ±0,69</th>
+                <td>Moderada</td>
+              </tr>
+               <tr>
+                <th scope="row">±0,20 - ±0,49</th>
+                <td>Débil</td>
+              </tr> 
+              <tr>
+                <th scope="row">±0,10 - ±0,19</th>
+                <td>Muy débil</td>
+              </tr>
+              <tr>
+                <th scope="row">±0,09 - ±0,0</th>
+                <td>Nula</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+
+    <button style="margin-top: 10px; font-size: 20px; width: 150px;margin-bottom: 30px;" class="btn btn-primary" onclick="window.location.href = '../index.html';">Salir</button>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="../fire.js"></script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>

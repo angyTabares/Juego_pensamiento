@@ -1,0 +1,56 @@
+<!-- Angy Paola Tabares- Daniel Ceballos- Juan manuel Adarve-->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="index.css" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <!-- jQuery library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Smart bunny</title>
+</head>
+
+<body class="text-center">
+    <style>
+        body {
+            background-image: linear-gradient( 90deg, #79F1A4 10%, #0E5CAD 100%);
+        }
+    </style>
+
+ 
+    <div class="container">
+      <h1 class="">Smart bunny</h1>
+        <form class="form-signin" id="login-form">
+            <img class="mb-4" src="img/conejo.png" alt="" width="72" height="72">
+            <h2 class="h3 mb-3 font-weight-normal">Ingresa tus datos</h2>
+            <label for="inputEmail" class="sr-only">Nombre de usuario</label>
+            <input  id="inputUsuario" class="form-control" placeholder="Nombre de usuario" required autofocus>
+            <label for="inputPassword" class="sr-only">Documento de identidad</label>
+            <input t id="inputDocumento" class="form-control" placeholder="Documento de identidad" required>
+            <div class="checkbox mb-3">
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Jugar</button>
+          </form>
+    </div>
+
+    <script  src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script  src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script  src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="fire.js"></script>
+    <script  src="./app.js"></script>
+</body>
+
+</html>

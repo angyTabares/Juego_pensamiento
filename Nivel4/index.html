@@ -1,0 +1,102 @@
+<!-- Angy Paola Tabares- Daniel Ceballos- Juan manuel Adarve-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <LINK REL=StyleSheet HREF="app.css" TYPE="text/css" MEDIA=screen>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <!-- jQuery library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </head>
+
+<body>
+    <style>
+        body {
+          background-image: linear-gradient( 90deg, #79F1A4 10%, #0E5CAD 100%);
+        }
+    </style>
+
+        <div class="container">
+            <div class="row">
+              <div class="col">
+                <canvas id="canvas" width="500" height="500">
+                </canvas>
+              </div>
+
+              <div class="col" style="margin-top: 15px;">
+
+                <h4 style="font:bold; ">Instrucciones:</h4>
+                <h4>Seleccione las direcciones para que el conejo llegue a la zanahoria.</h4>
+                <hr>
+            
+                <div id="camino" class="container" style="border:solid; border-color:white;width: 550px; float:left; height: 100px;"> </div>
+                <br><br><br><br><br>
+          
+                <a id="arriba" style="font-size: 40px;" class="btn btn-dark " onclick="seleccion(0)"><i class="fa-solid fa-arrow-up"></i></a>
+                <a id="abajo" style="font-size: 40px;" class="btn btn-dark " onclick="seleccion(1)"><i class="fa-solid fa-arrow-down"></i></a>
+                <a id="izquierda" style="font-size: 40px;" class="btn btn-dark " onclick="seleccion(2)"><i class="fa-solid fa-arrow-left"></i></a>
+                <a id="derecha" style="font-size: 40px;" class="btn btn-dark " onclick="seleccion(3)"><i class="fa-solid fa-arrow-right"></i></a>
+                <br><br><br>
+                <button class="btn btn-danger" style="float: left; width: 250px; font: bold; font-size: 30px; border-color:white ;" onclick="location.reload();">Reiniciar nivel</button>
+                <button class="btn btn-success" style="float: right; width: 250px; font: bold; font-size: 30px; border-color:white ;" onclick="moverse(5,5)">Verificar</button>
+ 
+              </div>
+            </div>
+        </div>
+      
+        <div class="modal" tabindex="-1" role="dialog" id="md-gana">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Felicidades!!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>Pasaste el nivel 4, click el boton para explorar el siguiente nivel</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="abandonar()" data-dismiss="modal">Abandonar juego</button>
+                <button type="button" class="btn btn-primary" onclick="window.location.href = '../Nivel5/index.html';">Siguiente nivel</button>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal" tabindex="-1" role="dialog" id="md-pierde">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Perdiste</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>Ups! El conejo no pudo llegar a su zanahoria.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="mandarPuntajeBD()">Finalizar</button>
+                <button type="button" class="btn btn-secondary" onclick="location.reload()" data-dismiss="modal">Intentar de nuevo</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <script  src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+        <script  src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+        <script  src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="../fire.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

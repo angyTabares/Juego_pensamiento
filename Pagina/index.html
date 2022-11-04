@@ -1,0 +1,210 @@
+<!-- Angy Paola Tabares- Daniel Ceballos- Juan manuel Adarve-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <!-- Latest compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+     <!-- jQuery library -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+   
+     <script src="https://code.jquery.com/jquery-2.2.4.min.js"integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+<body class="text-center">
+    
+
+    <style>
+        body {
+          background-image: linear-gradient( 90deg, #79F1A4 10%, #0E5CAD 100%);
+        }
+    </style>
+
+  <button style="margin-top: 50px; font-size: 30px; width: 250px;" class="btn btn-primary" onclick="window.location.href = '../index.html';">Salir</button>
+  <button style="margin-top: 50px; font-size: 30px; width: 250px;margin-left: 20px;" class="btn btn-primary" onclick="window.location.href = '../CoeficienteCorrelacion/index.html';">Ver Coeficiente</button>
+
+   <div class="container">
+     <div class="row">
+  
+      <div class="col" style="margin-top: 80px;">
+        <h3>Puntaje promedio global por nivel</h3>
+        <br>
+        <table class="table" >
+            <thead>
+              <tr>
+                <th scope="col">Nivel</th>
+                <th scope="col">Promedio correctas</th>
+                <th scope="col">Promedio incorrectas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Nivel 1</th>
+                <td id="n1C"></td>
+                <td id="n1I"></td>
+              </tr>
+              <tr>
+                <th scope="row">Nivel 2</th>
+                <td id="n2C"></td>
+                <td id="n2I"></td>
+
+              </tr>
+              <tr>
+                <th scope="row">Nivel 3</th>
+                <td id="n3C"></td>
+                <td id="n3I"></td>
+              </tr>
+              <tr>
+                <th scope="row">Nivel 4</th>
+                <td id="n4C"></td>
+                <td id="n4I"></td>
+              </tr>
+              <tr>
+                <th scope="row">Nivel 5</th>
+                <td id="n5C"></td>
+                <td id="n5I"></td>
+  
+              </tr>
+            </tbody>
+          </table>
+
+          <br>
+          <h3>Puntaje Individual</h3>
+          <br>
+          <table class="table" >
+            <thead>
+              <tr>
+                <th scope="col">Nivel</th>
+                <th scope="col">Correcta</th>
+                <th scope="col">Incorrecta</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Nivel 1</th>
+                <td id="min1C"></td>
+                <td id="min1I"></td>
+              </tr>
+              <tr>
+                <th scope="row">Nivel 2</th>
+                <td id="min2C"></td>
+                <td id="min2I"></td>
+              </tr>
+              <tr>
+                <th scope="row">Nivel 3</th>
+                <td id="min3C"></td>
+                <td id="min3I"></td>
+              </tr>
+              <tr>
+                <th scope="row">Nivel 4</th>
+                <td id="min4C"></td>
+                <td id="min4I"></td>
+              </tr>
+              <tr>
+                <th scope="row">Nivel 5</th>
+                <td id="min5C"></td>
+                <td id="min5I"></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <br>
+          <h3>Promedio encuesta</h3>
+          <br>
+          <table class="table" >
+            <thead>
+              <tr>
+                <th scope="col">Pregunta</th>
+                <th scope="col">Promedio</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">#1</th>
+                <td id="ep1"></td>
+              </tr>
+              <tr>
+                <th scope="row">#2</th>
+                <td id="ep2"></td>
+              </tr>
+              <tr>
+                <th scope="row">#3</th>
+                <td id="ep3"></td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+
+      <div class="col" style="margin-top: 80px;">
+        <h3>Puntaje global por nivel</h3>
+        <br>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Nivel</th>
+                <th scope="col">Cantidad correctas</th>
+                <th scope="col">Cantidad incorrectas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Nivel 1</th>
+                <td id="n1CantC"></td>
+                <td id="n1CantI"></td>
+              </tr>
+              <tr>
+                <th scope="row">Nivel 2</th>
+                <td id="n2CantC"></td>
+                <td id="n2CantI"></td>
+              </tr>
+              <tr>
+                <th scope="row">Nivel 3</th>
+                <td id="n3CantC"></td>
+                <td id="n3CantI"></td>
+              </tr>
+              <tr>
+                <th scope="row">Nivel 4</th>
+                <td id="n4CantC"></td>
+                <td id="n4CantI"></td>
+              </tr>
+              <tr>
+                <th scope="row">Nivel 5</th>
+                <td id="n5CantC"></td>
+                <td id="n5CantI"></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <br>
+          <h3>Lista de puntaje de usuarios</h3>
+          <br>
+          <table class="table" >
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Puntaje</th>
+              </tr>
+            </thead>
+            <tbody id="tabla">
+              
+            </tbody>
+          </table>
+      </div>
+     </div>
+   </div>
+
+    <script  src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script  src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script  src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script src="../fire.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
